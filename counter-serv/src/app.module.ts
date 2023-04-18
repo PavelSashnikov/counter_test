@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config/dist/config.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DbConfig } from './DB/config';
 import { LoginModule } from './login/login.module';
+import { CounterModule } from './counter/counter.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { LoginModule } from './login/login.module';
       inject: [ConfigService],
     }),
     LoginModule,
+    CounterModule,
   ],
   controllers: [],
   providers: [],
