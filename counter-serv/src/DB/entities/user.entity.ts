@@ -10,6 +10,6 @@ export class UserEntity implements Base.IUser {
   @Column('varchar', { unique: true })
   login: string;
 
-  @Column('varchar', { select: false })
+  @Column('varchar', { select: true })
   password: string;
 }

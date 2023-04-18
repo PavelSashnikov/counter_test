@@ -4,7 +4,6 @@ import { ConfigModule } from '@nestjs/config/dist/config.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DbConfig } from './DB/config';
 import { LoginModule } from './login/login.module';
-import { DataSource, DataSourceOptions } from 'typeorm';
 
 @Module({
   imports: [

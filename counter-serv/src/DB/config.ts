@@ -13,8 +13,8 @@ export const DbConfig = (
   database: configService.get<string>('DB_NAME'),
   synchronize: false,
   migrationsRun: true,
-  migrations: [join(__dirname, `migrations/*.migration.ts`)],
-  logger: 'debug',
-  //autoLoadEntities: true,
+  migrations: [join(__dirname, `migrations/*{.ts,.js}`)],
+  logging: true,
+  autoLoadEntities: true,
   entities: [join(__dirname, `entities/*.entity.ts`)],
 });
