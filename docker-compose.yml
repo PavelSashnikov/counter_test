@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  db:
+    container_name: db
+    image: db
+    build: counter-serv/src/DB
+    environment:
+      POSTGRES_USER: ${DB_LOGIN}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+      # DB volumes template
+    volumes:
+      ['db-data:/var/lib/postgresql/data/']
+    ports:
+    - ${DB_PORT}:${DB_PORT}
+    restart: always
+    networks:
+      - crudNet
+volumes:
+  db-data:
+    name: db-data
+networks:
+  crudNet:
+    driver: bridge
