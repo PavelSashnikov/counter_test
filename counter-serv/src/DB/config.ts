@@ -11,8 +11,10 @@ export const DbConfig = (
   username: configService.get<string>('DB_LOGIN'),
   password: configService.get<string>('DB_PASS'),
   database: configService.get<string>('DB_NAME'),
-  synchronize: true,
+  synchronize: false,
+  migrationsRun: true,
+  migrations: [join(__dirname, `migrations/*.migration.ts`)],
   logger: 'debug',
-  autoLoadEntities: true,
+  //autoLoadEntities: true,
   entities: [join(__dirname, `entities/*.entity.ts`)],
 });
