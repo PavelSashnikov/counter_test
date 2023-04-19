@@ -1,4 +1,4 @@
-import { hashSync } from 'bcrypt';
+import { hashSync } from 'bcryptjs';
 import { randomUUID } from 'crypto';
 
 export const adminSeed = {

@@ -3,8 +3,8 @@ import { ConfigService } from '@nestjs/config';
 import { ConfigModule } from '@nestjs/config/dist/config.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DbConfig } from './DB/config';
-import { LoginModule } from './login/login.module';
-import { CounterModule } from './counter/counter.module';
+import { LoginModule } from './resourses/login/login.module';
+import { CounterModule } from './resourses/counter/counter.module';
 
 @Module({
   imports: [
