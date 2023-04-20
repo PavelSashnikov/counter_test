@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(Routing.Path.home)
         },
         (e) => {
-          this.err = e?.message || 'check server connection';
+          this.err = e || 'check server connection';
           this.cd.detectChanges();
         }
       );
