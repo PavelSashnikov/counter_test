@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Login } from 'src/app/entities/login/login.namespace';
+import { getUrl } from '../helpers/api.helper';
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +15,14 @@ export class AuthService {
   token: string;
 
   login(userData: Login.LoginForm): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>('login', userData).pipe(
+    return this.http.post<{ token: string }>(getUrl('login'), userData).pipe(
       tap(({ token }) => {
         this.token = token;
       })
     );
+  }
+
+  logout(): void {
+    this.token = '';
   }
 }
