@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { Api } from 'src/app/entities/api/api.namespace';
+import { INIT_NUMS } from 'src/app/entities/home/constants';
 import { IncrementService } from 'src/app/shared/services/increment.service';
 
 @Component({
@@ -7,9 +11,17 @@ import { IncrementService } from 'src/app/shared/services/increment.service';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
-  constructor(private readonly incrementService: IncrementService) {}
-  count: number = 0;
+export class HomeComponent {
+  constructor(private readonly incrementService: IncrementService, private cd: ChangeDetectorRef) {}
+  counter = INIT_NUMS;
 
-  ngOnInit(): void {}
+  onIncrement(): void {
+    this.incrementService
+      .increment(this.counter.current)
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.counter = data;
+        this.cd.detectChanges();
+      });
+  }
 }

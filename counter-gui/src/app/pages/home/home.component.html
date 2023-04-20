@@ -1,7 +1,7 @@
 <div class="wrapper">
   <section class="count">
     Count:
-    <span class="counter">{{ count }}</span>
-    <button class="increment styled-btn">increment</button>
+    <span class="counter">{{ counter.current }}</span>
+    <button class="increment styled-btn" (click)="onIncrement()">increment</button>
   </section>
 </div>
