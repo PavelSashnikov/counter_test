@@ -14,8 +14,7 @@
 
     .form {
       padding: $default-indent;
-      border-radius: $border-radius;
-      box-shadow: 0 0 4rem $shadow-color;
+      box-shadow: 0 0 1rem $shadow-color;
       display: flex;
       flex-direction: column;
       gap: $default-indent;
@@ -32,12 +31,14 @@
       .input,
       .button {
         padding: $el-padding;
-        border-radius: $el-radius;
-        border: $border;
+        border: 0;
+        border-bottom: $border;
       }
 
       .button {
         @include button();
+        padding: $small-indent;
+        border-radius: 0.5rem;
       }
     }
   }
