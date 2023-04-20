@@ -6,5 +6,6 @@
     <button class="button styled-btn" (click)="onSubmit()">
       LogIn
     </button>
+    <div class="hint" [class.hidden]="!err">{{ err }}</div>
   </form>
 </div>

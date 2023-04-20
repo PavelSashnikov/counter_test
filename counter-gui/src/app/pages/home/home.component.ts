@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { IncrementService } from 'src/app/shared/services/increment.service';
 
 @Component({
   selector: 'home',
@@ -7,7 +8,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private readonly incrementService: IncrementService) {}
   count: number = 0;
 
   ngOnInit(): void {}
