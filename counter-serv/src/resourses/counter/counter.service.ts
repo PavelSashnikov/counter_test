@@ -6,7 +6,7 @@ export class CounterService {
   private readonly step = 2;
 
   increment = (num: number): CounterResponseDto => {
-    const current = num ? num * this.step : 1;
+    const current = num ? num * this.step : 2;
     const next = current * this.step;
     return {
       prev: num,

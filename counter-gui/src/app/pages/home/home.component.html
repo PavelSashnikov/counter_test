@@ -2,6 +2,18 @@
   <section class="count">
     Count:
     <span class="counter">{{ counter.current }}</span>
-    <button class="increment styled-btn" (click)="onIncrement()">increment</button>
+    <button class="increment styled-btn" (click)="onIncrement()">
+      increment
+    </button>
   </section>
+  <div class="modal" [class.hidden]="!showModal">
+    <div class="values">
+      <p>Current: {{ counter.current }}</p>
+      <p>Next: {{ counter.next }}</p>
+      <div class="actions">
+        <button class="styled-btn" (click)="modalAction(true)">confirm</button>
+        <button class="cancel styled-btn" (click)="modalAction(false)">cancel</button>
+      </div>
+    </div>
+  </div>
 </div>
