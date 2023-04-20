@@ -1,0 +1,7 @@
+@import "var";
+
+@mixin button() {
+  box-shadow: inset 0em 0em 2rem $shadow-color;
+  background-color: $accent-color;
+  border: 0;
+}

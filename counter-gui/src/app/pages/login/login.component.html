@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <form [formGroup]="loginForm" class="form">
+    <div class="hint" [class.hidden]="hideHint">all fields are required</div>
+    <input class="input" type="text" placeholder="login (admin)" [formControlName]="formFields.login">
+    <input class="input" type="password" placeholder="password (admin)" [formControlName]="formFields.password">
+    <button class="button styled-btn" (click)="onSubmit()">
+      LogIn
+    </button>
+    <div class="hint" [class.hidden]="!err">{{ err }}</div>
+  </form>
+</div>

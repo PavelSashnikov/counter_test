@@ -24,7 +24,7 @@ export class LoginService {
       select: ['login', 'password'],
     });
 
-    if (!(await compare(userData.password, user?.password))) {
+    if (!user || !(await compare(userData.password, user?.password))) {
       throw new UnauthorizedException();
     }
 
