@@ -1,6 +1,10 @@
 @import "var";
+@import "mixin";
 
 :host {
+  $el-padding: 0.2rem;
+  $el-radius: 0.2rem;
+
   .wrapper {
     display: flex;
     width: 100%;
@@ -15,6 +19,26 @@
       display: flex;
       flex-direction: column;
       gap: $default-indent;
+
+      .hint{
+        transition: opacity 0.4s;
+        color: $warn-color;
+      }
+
+      .hidden{
+        opacity: 0;
+      }
+
+      .input,
+      .button {
+        padding: $el-padding;
+        border-radius: $el-radius;
+        border: $border;
+      }
+
+      .button {
+        @include button();
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 @import "var";
+@import "mixin";
 
 :host {
   .wrapper {
@@ -15,12 +16,11 @@
     }
 
     .increment {
+      @include button();
       margin-left: $default-indent;
       font-size: 3rem;
       border-radius: 1rem;
-      background-color: $accent-color;
       padding: $small-indent;
-      box-shadow: inset 0em 0em 2rem $shadow-color;
     }
   }
 }

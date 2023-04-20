@@ -12,8 +12,18 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   formFields = Login.LoginFields;
 
+  hideHint: boolean = true;
+
   ngOnInit(): void {
     this.createForm();
+  }
+
+  onSubmit(): void {
+    if(this.loginForm.invalid) {
+      this.hideHint = false;
+      return
+    }
+    this.hideHint = true;
   }
 
   private createForm(): void {

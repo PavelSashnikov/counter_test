@@ -1,8 +1,9 @@
 <div class="wrapper">
   <form [formGroup]="loginForm" class="form">
-    <input class="input" type="text" placeholder="admin" [formControlName]="formFields.login">
-    <input class="input" type="password" placeholder="admin" [formControlName]="formFields.password">
-    <button class="button styled-btn">
+    <div class="hint" [class.hidden]="hideHint">all fields are required</div>
+    <input class="input" type="text" placeholder="login (admin)" [formControlName]="formFields.login">
+    <input class="input" type="password" placeholder="password (admin)" [formControlName]="formFields.password">
+    <button class="button styled-btn" (click)="onSubmit()">
       LogIn
     </button>
   </form>
