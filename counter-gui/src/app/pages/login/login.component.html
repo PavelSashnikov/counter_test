@@ -1,1 +1,9 @@
-<p>login works!</p>
+<div class="wrapper">
+  <form [formGroup]="loginForm" class="form">
+    <input class="input" type="text" placeholder="admin" [formControlName]="formFields.login">
+    <input class="input" type="password" placeholder="admin" [formControlName]="formFields.password">
+    <button class="button styled-btn">
+      LogIn
+    </button>
+  </form>
+</div>

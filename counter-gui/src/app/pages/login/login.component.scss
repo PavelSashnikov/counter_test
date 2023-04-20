@@ -1,0 +1,20 @@
+@import "var";
+
+:host {
+  .wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .form {
+      padding: $default-indent;
+      border-radius: $border-radius;
+      box-shadow: 0 0 4rem $shadow-color;
+      display: flex;
+      flex-direction: column;
+      gap: $default-indent;
+    }
+  }
+}

@@ -21,12 +21,6 @@
       background-color: $accent-color;
       padding: $small-indent;
       box-shadow: inset 0em 0em 2rem $shadow-color;
-      transition: 0.3s all;
-      outline: none;
-
-      &:active {
-        transform: scale(0.97);
-      }
     }
   }
 }
